@@ -14,24 +14,43 @@ class BuscaCell: UITableViewCell {
     let empresaLabel: UILabel = .textlabel(text: "Empresa nome", fontSize: 14)
     let obterButton: UIButton = .obterButton()
     
+    let screenShoot1ImageView: UIImageView = .screenShootImageView()
+    let screenShoot2ImageView: UIImageView = .screenShootImageView()
+    let screenShoot3ImageView: UIImageView = .screenShootImageView()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
+        // Empresa stackView
         let tituloEmpresaStackView = UIStackView(arrangedSubviews: [
                                                     tituloLabel,
                                                     empresaLabel])
         tituloEmpresaStackView.spacing = 8
         tituloEmpresaStackView.axis = .vertical
         
+        // header stackView
         let headerStackView = UIStackView(arrangedSubviews: [iconeImageView,
                                                        tituloEmpresaStackView,
                                                        obterButton])
         headerStackView.spacing = 12
         headerStackView.alignment = .center
         
-        addSubview(headerStackView)
-        headerStackView.preencherSuperview(padding: .init(top: 0, left: 20, bottom: 0, right: 20))
+        // lista de screenShoots
+        let screenShootStackView = UIStackView(arrangedSubviews: [screenShoot1ImageView,
+                                                                  screenShoot2ImageView,
+                                                                  screenShoot3ImageView])
+        screenShootStackView.spacing = 12
+        screenShootStackView.distribution = .fillEqually
+        
+        //Global screenshoots
+        let globalStackView = UIStackView(arrangedSubviews: [headerStackView,
+                                                             screenShootStackView])
+        globalStackView.spacing = 16
+        globalStackView.axis = .vertical
+        
+        addSubview(globalStackView)
+        globalStackView.preencherSuperview(padding: .init(top: 20, left: 20, bottom: 20, right: 20))
     }
     
     required init?(coder: NSCoder) {

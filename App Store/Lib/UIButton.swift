@@ -19,6 +19,7 @@ extension UIButton {
         button.size(size: .init(width: 80, height: 32))
         button.layer.cornerRadius = 16
         button.clipsToBounds = true
+        button.backgroundColor = UIColor(white: 0.95, alpha: 1)
         
         return button
     }
