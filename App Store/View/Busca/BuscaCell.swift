@@ -9,6 +9,24 @@ import UIKit
 
 class BuscaCell: UITableViewCell {
     
+    var app: App! {
+        didSet {
+            tituloLabel.text = app.nome
+            empresaLabel.text = app.empresa
+            
+            DispatchQueue.main.async {
+                if let url = URL(string: self.app.iconeUrl){
+                    do{
+                        let data = try Data(contentsOf: url)
+                        self.iconeImageView.image = UIImage(data: data)
+                    }catch let err {
+                        print(err)
+                    }
+                }
+            }
+        }
+    }
+    
     let iconeImageView: UIImageView = .iconeImageView()
     let tituloLabel: UILabel = .textlabel(text: "App nome", fontSize: 18, numberOfLines: 2)
     let empresaLabel: UILabel = .textlabel(text: "Empresa nome", fontSize: 14)

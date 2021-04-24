@@ -11,26 +11,26 @@ class BuscaService {
     
     static let shared = BuscaService()
     
-    func buscaApps(texto: String) {
-        guard let url = URL(string: "https://api.euprogramador.app/app-store/v1/apps?search=face")
+    func buscaApps(texto: String, completion: @escaping ([App]?, Error?) -> ()) {
+        guard let url = URL(string: "https://api.euprogramador.app/app-store/v1/apps?search=\(texto)")
         else {
             return
         }
         
         URLSession.shared.dataTask(with: url) { (data,res,err) in
             if let err = err {
-                print(err)
+                completion(nil, err)
                 return
             }
             
-            do {
+            do{
                 
                 guard let data = data else {return}
                 let apps = try JSONDecoder().decode([App].self, from: data)
-                print(apps)
+                completion(apps, nil)
                 
-            } catch let err {
-                print(err)
+            }catch let err {
+                completion(nil, err)
                 return
             }
             
