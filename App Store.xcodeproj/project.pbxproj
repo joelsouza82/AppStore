@@ -22,6 +22,7 @@
 		0E275611262242670077885A /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E275610262242670077885A /* UIButton.swift */; };
 		0E275615262242E40077885A /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E275614262242E40077885A /* UIColor.swift */; };
 		0E31F90D26229505007C04A2 /* BuscaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E31F90C26229505007C04A2 /* BuscaService.swift */; };
+		0E5CCF462634A12E0028572A /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5CCF452634A12E0028572A /* App.swift */; };
 		EB48B5124FBA17AC585F7435 /* Pods_App_Store.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CC3A444BDB7F03DFB8B280A /* Pods_App_Store.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,7 @@
 		0E275610262242670077885A /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		0E275614262242E40077885A /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		0E31F90C26229505007C04A2 /* BuscaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuscaService.swift; sourceTree = "<group>"; };
+		0E5CCF452634A12E0028572A /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		5E1558908BD570B51B2C1F99 /* Pods-App Store.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App Store.debug.xcconfig"; path = "Target Support Files/Pods-App Store/Pods-App Store.debug.xcconfig"; sourceTree = "<group>"; };
 		8CC3A444BDB7F03DFB8B280A /* Pods_App_Store.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_App_Store.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCF92E96DF63F6EBF1AB9D2A /* Pods-App Store.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App Store.release.xcconfig"; path = "Target Support Files/Pods-App Store/Pods-App Store.release.xcconfig"; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 		0E2755DE26222C2D0077885A /* App Store */ = {
 			isa = PBXGroup;
 			children = (
+				0E5CCF442634A11F0028572A /* Model */,
 				0E31F90B262294A0007C04A2 /* Service */,
 				0E275602262239290077885A /* Lib */,
 				0E2755FC262237F70077885A /* View */,
@@ -156,6 +159,14 @@
 				0E31F90C26229505007C04A2 /* BuscaService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		0E5CCF442634A11F0028572A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0E5CCF452634A12E0028572A /* App.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		E53CD134195D01D3F51F9F26 /* Frameworks */ = {
@@ -262,6 +273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E5CCF462634A12E0028572A /* App.swift in Sources */,
 				0E27560B26223A070077885A /* UIImageView.swift in Sources */,
 				0E2755FF262238300077885A /* BuscaCell.swift in Sources */,
 				0E2755E426222C2D0077885A /* ViewController.swift in Sources */,
