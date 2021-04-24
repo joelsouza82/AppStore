@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class BuscaCell: UITableViewCell {
     
@@ -14,7 +15,27 @@ class BuscaCell: UITableViewCell {
             tituloLabel.text = app.nome
             empresaLabel.text = app.empresa
             
-            DispatchQueue.main.async {
+            iconeImageView.sd_setImage(with: URL(string: app.iconeUrl), completed: nil)
+            
+            if let screenshorUrls = app.screenshotUrls {
+                if screenshorUrls.count > 0 {
+                    self.screenShoot1ImageView.sd_setImage(with: URL(string: screenshorUrls[0]), completed: nil)
+                    
+                }
+                if screenshorUrls.count > 1 {
+                    self.screenShoot2ImageView.sd_setImage(with: URL(string: screenshorUrls[1]), completed: nil)
+                    
+                }
+                if screenshorUrls.count > 2 {
+                    self.screenShoot3ImageView.sd_setImage(with: URL(string: screenshorUrls[2]), completed: nil)
+                    
+                }
+                
+            }
+            //Sem usar dependecia, carregar imagem
+            //Problema que está lento o carregamento da imagem
+            /*
+             DispatchQueue.main.async {
                 if let url = URL(string: self.app.iconeUrl){
                     do{
                         let data = try Data(contentsOf: url)
@@ -24,6 +45,7 @@ class BuscaCell: UITableViewCell {
                     }
                 }
             }
+            */
         }
     }
     

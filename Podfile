@@ -6,5 +6,6 @@ target 'App Store' do
   use_frameworks!
 
   # Pods for App Store
+pod 'SDWebImage', '~> 5.0'
 
 end
